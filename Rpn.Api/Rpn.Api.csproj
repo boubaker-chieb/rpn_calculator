@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>bc833dd0-9276-4e73-b429-fa8aae96da20</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0-rc.2.22476.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Extensions\" />
+    <None Remove="Helpers\" />
+    <None Remove="Swashbuckle.AspNetCore.Annotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+</Project>
